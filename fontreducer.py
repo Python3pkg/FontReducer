@@ -47,10 +47,10 @@ def generate_subset(chars, fontpath):
         try:
             char_in_fontfile = font[sample_char]
         except TypeError:
-            _logger.info(unichr(sample_char) + ' is missing font code')
+            _logger.info(chr(sample_char) + ' is missing font code')
             continue
         else:
-            uni = char_in_fontfile.unicode
+            uni = char_in_fontfile.str
             if uni != sample_char:
                 chars_append(uni)
             alts = char_in_fontfile.altuni
